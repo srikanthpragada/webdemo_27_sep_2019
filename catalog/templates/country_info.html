@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Information</title>
+    <style>
+        .colhead {background-color:lightgray; font-weight:bold}
+    </style>
+</head>
+<body>
+<h2>Country Information</h2>
+
+<form>
+    Country Code : <input type="text" name="code"  value="{{code}}" />
+    <input type="submit" value="Go"/>
+</form>
+
+{% if details %}
+   <h3>Country Details</h3>
+   <table>
+       <tr>
+           <td class="colhead">Name </td>
+           <td>{{details.name}}</td>
+       </tr>
+       <tr>
+           <td class="colhead" >Capital </td>
+           <td>{{details.capital}}</td>
+       </tr>
+       <tr>
+           <td class="colhead">Area (sq. km) </td>
+           <td>{{details.area}}</td>
+       </tr>
+       <tr>
+           <td class="colhead">Population</td>
+           <td>{{details.population}}</td>
+       </tr>
+   </table>
+   <p></p>
+   <img src="{{details.flag}}" style="width:100px;height:70px" border="1" />
+{% endif %}
+
+{% if error %}
+   <h3>{{error}}</h3>
+{% endif %}
+
+</body>
+</html>

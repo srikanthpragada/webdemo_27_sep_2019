@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of Books</title>
+</head>
+<body>
+<h1>Books</h1>
+
+<table  style="width:100%" >
+    <tr style="background-color:darkgray;color:white">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+    </tr>
+    {% for book in books %}
+       <tr>
+           <td>{{book.title}} </td>
+           <td>{{book.author}} </td>
+           <td style="text-align:right">{{book.price | floatformat:2}} </td>
+       </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
