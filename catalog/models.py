@@ -9,3 +9,7 @@ class Book:
         self.price = price
 
 
+class Author(models.Model):
+    fullname = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    mobile = models.CharField(max_length=10)
