@@ -1,0 +1,14 @@
+{% extends "authors_master.html" %}
+
+{% block body %}
+
+<h2>Add Author</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <p/>
+    <input type="submit" value="Submit"/>
+</form>
+{% endblock %}
