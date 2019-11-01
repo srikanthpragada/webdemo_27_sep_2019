@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function get_name()
+        {
+           // Ajax request
+           var id = $("#auid").val()
+           $.get("/catalog/authorname/" + id,null,showName);
+        }
+
+        function showName(name) {
+           $("#fullname").text(name)
+        }
+    </script>
+</head>
+<body>
+<h2>Ajax Demo</h2>
+
+Author Id : <input type="text" id="auid" onblur="get_name()" />
+<span id="fullname"></span>
+
+</body>
+</html>

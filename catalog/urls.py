@@ -14,4 +14,6 @@ urlpatterns = [
     path('authors_edit/<int:id>', author_views.authors_edit),  # URL, function
     path('authors_delete/<int:id>', author_views.authors_delete),  # URL, function
     path('authors_home/', author_views.authors_home),  # URL, function
+    path('ajax/', views.ajax_demo),  # URL, function
+    path('authorname/<int:id>', author_views.authors_name),  # URL, function
 ]

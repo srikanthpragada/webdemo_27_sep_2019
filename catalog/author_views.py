@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import Author
 from .forms import AuthorForm
 
@@ -50,3 +51,11 @@ def authors_home(request):
      authorscount = len(Author.objects.all())
      return render(request, 'authors_home.html',
                    {'authorscount' : authorscount})
+
+
+def authors_name(request, id):
+    try:
+        author = Author.objects.get(id=id)
+        return HttpResponse(author.fullname)
+    except:
+        return HttpResponse("Author Not Found!")

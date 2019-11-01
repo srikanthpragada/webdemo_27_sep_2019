@@ -4,7 +4,6 @@ from django.shortcuts import render
 
 from .models import Book
 
-
 # Create your views here.
 
 def index(request):
@@ -33,3 +32,6 @@ def country_info(request):
             return render(request, 'country_info.html', {'code': code, 'error': 'Sorry! Invalid country code!'})
 
     return render(request, 'country_info.html')
+
+def ajax_demo(request):
+    return render(request,'ajax_demo.html')
