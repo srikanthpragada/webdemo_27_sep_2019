@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from . import views, dbviews, author_views
+from . import views, dbviews, author_views, rest_views
 
 urlpatterns = [
     path('index/', views.index),
@@ -16,4 +16,7 @@ urlpatterns = [
     path('authors_home/', author_views.authors_home),  # URL, function
     path('ajax/', views.ajax_demo),  # URL, function
     path('authorname/<int:id>', author_views.authors_name),  # URL, function
+    path('rest/authors/', rest_views.process_authors),  # URL, function
+    path('rest/authors/<int:id>', rest_views.process_author),  # URL, function
+
 ]
